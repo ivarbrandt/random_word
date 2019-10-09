@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Word Gen</title>
+    {% load static %}
+</head>
+
+<body>
+    <form action="/ran_word" method="post">
+        {% csrf_token %}
+        <h4>Random Word (attempt # {{request.session.count}})</h4>
+        <h4>{{ request.session.string }}</h4>
+        <input type="submit" value="GENERATE">
+    </form>
+
+</body>
+
+</html>
